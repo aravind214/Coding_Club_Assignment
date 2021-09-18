@@ -97,8 +97,8 @@ fi
                           echo "Dummy"
                       fi                       
                   done
-              fi
-              if [ $2 == "CSK" ]
+              
+              elif [ $2 == "CSK" ]
               then
                  for value in ${cskTeam[*]}
                   do
