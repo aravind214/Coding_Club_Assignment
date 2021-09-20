@@ -1,0 +1,5 @@
+echo "enter string"
+read x
+echo "Select a char for knowing how many repeatation of that char :"
+read rep
+grep -o "$rep" <<<"$x" | wc -l
