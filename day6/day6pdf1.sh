@@ -113,3 +113,19 @@ for ((i;i<$input;i++));do
   if [ $count -eq 0 ];then
   echo "no prime factors found except 1 and $input"
   fi
+
+echo "or"
+#prime factor
+echo "enter a number n till you want to print the primefactors of all the numbers"
+read n
+declare -a arr
+
+for((i=1;i<=$n;i++))
+do
+if(($n%$i == 0))
+then
+arr[$i]=$i
+fi
+done
+
+echo "all prime factors of $n into array : ${arr[*]}"

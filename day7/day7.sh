@@ -128,33 +128,27 @@ for i in ${array[@]}; do
   tot=$((tot+i)) 
 done
 echo "Total: $tot"
-echo "************************************************************"
+
+echo "or"
+echo 
+"************************************************************"
 echo "5Q. 5. Take a range from 0 – 100, find the digits that are repeated twice like 33, 77,
 etc and store them in an array?"
-echo ""
-arr=
-function reverseNum(){
-       unit_digit=0
-        rev=""
-           n=$1
-        while [ $n > 0 ]
-        do
-              unit_digit=$(( $n % 10 ))
-              n=$(( $n / 10 ))
-              rev=$(echo ${rev}${unit_digit})
+echo "print the digits that are repeated twice like 33 , 77 etc"
+declare -a arr
 
-        done
-         if [ $rev -eq $1 ]
-         then 
-           let arr+=(${rev})
-         fi
-}
-
-for ((i=0;i<=100;i++))
+for(( i=1;i<100;i++ ))
 do
-      if (($i>9))
-      then
-         reverseNum $i
-      fi
+number=$i
+rem=$i%10
+number=$i/10
+
+if(( $rem == $number ))
+then
+arr[$i]=$i
+fi
 done
+
 echo ${arr[@]}
+
+echo "or"
